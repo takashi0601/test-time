@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Clock</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 5rem;
+    }
+  </style>
+</head>
+<body>
+
+<div id="clock"></div>
+
+<script>
+function updateClock() {
+  const now = new Date();
+  const hh = String(now.getHours()).padStart(2, '0');
+  const mm = String(now.getMinutes()).padStart(2, '0');
+  document.getElementById("clock").textContent = `${hh}:${mm}`;
+}
+
+// 初回実行
+updateClock();
+
+// 1秒ごと更新
+setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
